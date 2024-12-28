@@ -25,3 +25,12 @@
 - Migrate from `json` to `toml` for config files
 - Migrate from `bson` to `msgpack` for event object files
 - Script to migrate from `~/.starcal3` to `~/.starcal4`
+
+## AyanDict v3.0 (2025 or 2026)
+
+- Migrate to [miqt](https://github.com/mappu/miqt) and Qt6 (WIP)
+
+## `starcal-server`
+
+- Migrate to GraphQL
+- Try switching from MongoDB to [FerretDB](https://github.com/FerretDB/FerretDB)
