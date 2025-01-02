@@ -12,7 +12,9 @@
   - `Glossary`: `format` arguments to `read`, `directRead` and `write` methods are deprecated
     - Users must rename it to `formatName`
 
-- Break `Glossary` class functionality up into several classes, for example
+- Migrate to `$XDG_CONFIG_HOME/pyglossary` as config dir (in `core.py`)
+
+- Add `glossary_v3.py`: break `Glossary` class functionality up into several classes, for example
 
   - `GlossaryConvertor`
   - `GlossaryCreator`
