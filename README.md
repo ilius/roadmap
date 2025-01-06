@@ -16,6 +16,8 @@
 
 - Switch to `toml` for config file (ship with a small `toml` library)
 
+- Aard2 Writer: remove `.slob` file (if exists) before write (to avoid error).
+
 - Add `glossary_v3.py`: break `Glossary` class functionality up into several classes, for example
 
   - `GlossaryConvertor`
