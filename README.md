@@ -18,6 +18,8 @@
 
 - Aard2 Writer: remove `.slob` file (if exists) before write (to avoid error).
 
+- Kobo Writer: create zip file automatically (in place of the folder, without giving `.zip` extension)
+
 - Add `glossary_v3.py`: break `Glossary` class functionality up into several classes, for example
 
   - `GlossaryConvertor`
