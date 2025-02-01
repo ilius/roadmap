@@ -16,6 +16,17 @@
 
 - Switch to `toml` for config file (ship with a small `toml` library)
 
+- Config: replace `skip_resources` with `resources`:
+	- `--skip-resources` flag becomes `--no-resources`
+
+- Config: replace `color.*` keys with new keys
+
+	- `color.enable.cmd.unix` -> `cmd.color.enable.unix`
+	- `color.enable.cmd.windows` -> `cmd.color.enable.windows`
+	- `color.cmd.critical` -> `cmd.color.critical`
+	- `color.cmd.error` -> `cmd.color.error`
+	- `color.cmd.warning` -> `cmd.color.warning`
+
 - Aard2 Writer: remove `.slob` file (if exists) before write (to avoid error).
 
 - Kobo Writer: create zip file automatically (in place of the folder, without giving `.zip` extension)
