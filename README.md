@@ -46,14 +46,29 @@
 ## StarCalendar 4.0 (2025 or 2026)
 
 - Migrate from Gtk3 to Gtk4
+
 - Migrate from `json` to `toml` for config files
-  - Use or ship with [toml](https://pypi.org/project/toml/) to dependencies
-    - `tomllib` from Python 3.11+ can only parse, not encode/dump
-    - Debian: `python3-toml` since Debian 10
-    - Ubuntu: `python3-toml` since Ubuntu 20.04 LTS
-    - ArchLinux: `python-toml` since 2018
+
+  - `tomllib` from Python 3.11+ can parse, but not encode/dump
+  - Package [toml](https://pypi.org/project/toml/), Github: [@uiri/toml](https://github.com/uiri/toml/)
+    - Github repo has no commit since 2023/10/11
+    - Fedora: `python3-toml` package will be deprecated in Fedora 38. The upstream toml package is considered unmaintained (see description) and Python 3.11 contains a TOML-reading library in the standard library. Existing Fedora packages depend on python-toml, so we cannot remove it yet. Packagers are encouraged to work with upstreams to switch to tomllib/tomli for reading toml or tomli-w for writing it. But python-toml remains available until it is a leaf package, it will be removed then (possibly not yet in Fedora 38). See [source](https://fedoraproject.org/wiki/Changes/DeprecatePythonToml).
+  - Packages [toml](https://pypi.org/project/tomli/) and [tomli-w](https://pypi.org/project/tomli-w/)
+    - Github: https://github.com/hukkin/tomli
+    - Comment-preserving round-trip parsing is NOT supported
+    - Debian: `python3-tomli` and `python3-tomli-w` since Debian 12
+    - Ubuntu: `python3-tomli` and `python3-tomli-w` since 22.04 LTS
+    - Fedora: `python-tomli` and `python-tomli-w` since Fedora 43
+    - ArchLinux: `python-tomli` and `python-tomli-w` since 2021
+    - openSUSE: `python-tomli` and `python-tomli-w` in openSUSE Tumbleweed
+      - No official repo package for Leap 15.5 or 15.6
+      - https://software.opensuse.org/package/python-tomli
+      - https://software.opensuse.org/package/python-tomli-w
+
 - Migrate from `bson` to `msgpack` for event object files
+
 - Rename Jalali calendar to Persian calendar
+
 - Script to migrate from `~/.starcal3` to `~/.starcal4`
 
 ## AyanDict v3.0 (2025 or 2026)
