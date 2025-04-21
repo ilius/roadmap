@@ -49,11 +49,24 @@
 
 - Migrate from `json` to `toml` for config files
 
-  - `tomllib` from Python 3.11+ can parse, but not encode/dump
-  - Package [toml](https://pypi.org/project/toml/), Github: [@uiri/toml](https://github.com/uiri/toml/)
+  - Package `tomlkit`: Style-preserving, can parse and dump/encode
+
+    - [PyPI](https://pypi.org/project/tomlkit), [Github](https://github.com/python-poetry/tomlkit)
+    - [Debian](https://packages.debian.org/bookworm/python3-tomlkit)
+    - [Ubuntu](https://packages.ubuntu.com/oracular/python3-tomlkit)
+    - [Fedora](https://packages.fedoraproject.org/pkgs/python-tomlkit/python3-tomlkit/)
+    - [ArchLinux](https://archlinux.org/packages/extra/any/python-tomlkit/)
+
+  - `tomllib` from Python 3.11+ can parse, but not dump/encode
+
+  - Package `toml`: discontinued, deprecated in Fedora
+
+    - [PyPI](https://pypi.org/project/toml), [Github](https://github.com/uiri/toml)
     - Github repo has no commit since 2023/10/11
     - Fedora: `python3-toml` package will be deprecated in Fedora 38. The upstream toml package is considered unmaintained (see description) and Python 3.11 contains a TOML-reading library in the standard library. Existing Fedora packages depend on python-toml, so we cannot remove it yet. Packagers are encouraged to work with upstreams to switch to tomllib/tomli for reading toml or tomli-w for writing it. But python-toml remains available until it is a leaf package, it will be removed then (possibly not yet in Fedora 38). See [source](https://fedoraproject.org/wiki/Changes/DeprecatePythonToml).
+
   - Packages [toml](https://pypi.org/project/tomli/) and [tomli-w](https://pypi.org/project/tomli-w/)
+
     - Github: https://github.com/hukkin/tomli
     - Comment-preserving round-trip parsing is NOT supported
     - Debian: `python3-tomli` and `python3-tomli-w` since Debian 12
@@ -69,7 +82,7 @@
 
   - [msgpack-python](https://github.com/msgpack/msgpack-python)
 
-    - [Debian](https://packages.debian.org/bookworm/python3-msgpack), [Ubuntu](https://packages.ubuntu.com/oracular/python3-msgpack), [Fedora 41](https://packages.fedoraproject.org/pkgs/python-msgpack/python3-msgpack/): many architectures
+    - [Debian](https://packages.debian.org/bookworm/python3-msgpack), [Ubuntu](https://packages.ubuntu.com/oracular/python3-msgpack), [Fedora](https://packages.fedoraproject.org/pkgs/python-msgpack/python3-msgpack/): many architectures
     - [ArchLinux](https://archlinux.org/packages/extra/x86_64/python-msgpack/): **only x86_64**
 
   - [u-msgpack-python](https://github.com/vsergeev/u-msgpack-python)
