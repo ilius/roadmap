@@ -14,6 +14,8 @@
 
 - Switch to `$XDG_CONFIG_HOME/pyglossary` as config dir on Linux/BSD (`core.py`)
 
+- Use `$XDG_CACHE_HOME/pyglossary` (if `XDG_CACHE_HOME` is set) as cache dir on Linux/BSD (`core.py`)
+
 - Require Python 3.11 or later
 
 - Switch to `toml` for config file (use `tomllib` from standard lib)
@@ -68,6 +70,14 @@
 - Migrate from `bson` to `msgpack` for event object files
 
 - Rename Jalali calendar to Persian calendar
+
+- Organize/move config parameters into namespaces / classes
+
+  - Rename `labelBox` (Year & Month Bar) main win item/module to `yearMonthBar`
+  - Changes in `Font` objects:
+    - Replace bold (bool) property with weight (int)
+      - `Pango.Weight` ranges from 100 to 1000 (400=NORMAL), let's devide that by 10
+    - Save/load as dict (currently it's list)
 
 - Script to migrate from `~/.starcal3` to `~/.starcal4`
 
