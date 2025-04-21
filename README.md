@@ -47,8 +47,6 @@
 
 ## StarCalendar 4.0 (2025 or 2026)
 
-- Migrate from Gtk3 to Gtk4
-
 - Migrate from `json` to `toml` for config files
 
   - `tomllib` from Python 3.11+ can parse, but not encode/dump
@@ -69,6 +67,20 @@
 
 - Migrate from `bson` to `msgpack` for event object files
 
+  - [msgpack-python](https://github.com/msgpack/msgpack-python)
+
+    - [Debian stable: 1.0.3](https://packages.debian.org/bookworm/python3-msgpack)
+    - [Ubuntu: 1.0.3](https://packages.ubuntu.com/oracular/python3-msgpack)
+    - [Fedora 41: 1.0.7](https://packages.fedoraproject.org/pkgs/python-msgpack/python3-msgpack/)
+    - [ArchLinux](https://archlinux.org/packages/extra/x86_64/python-msgpack/): **only x86_64**
+
+  - [u-msgpack-python](https://github.com/vsergeev/u-msgpack-python)
+
+    - [ArchLinux](https://archlinux.org/packages/extra/any/python-u-msgpack/): **platform-independant**
+    - [Debian stable](https://packages.debian.org/bookworm/python3-u-msgpack)
+
+  - Both modules have `packb` and `unpackb` funcs. Their API for extended types seem to be different. But we already convert everything to/from basic types (bool, int, float, string, list, dict) for saving/loading json. So it's probably fine to support both modules.
+
 - Rename Jalali calendar to Persian calendar
 
 - Organize/move config parameters into namespaces / classes
@@ -76,7 +88,7 @@
   - Rename `labelBox` (Year & Month Bar) main win item/module to `yearMonthBar`
   - Changes in `Font` objects:
     - Replace bold (bool) property with weight (int)
-      - `Pango.Weight` ranges from 100 to 1000 (400=NORMAL), let's devide that by 10
+      - `Pango.Weight` ranges from 100 to 1000 (400=NORMAL), let's divide that by 10
     - Save/load as dict (currently it's list)
 
 - Script to migrate from `~/.starcal3` to `~/.starcal4`
