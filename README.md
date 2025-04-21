@@ -69,9 +69,7 @@
 
   - [msgpack-python](https://github.com/msgpack/msgpack-python)
 
-    - [Debian stable: 1.0.3](https://packages.debian.org/bookworm/python3-msgpack)
-    - [Ubuntu: 1.0.3](https://packages.ubuntu.com/oracular/python3-msgpack)
-    - [Fedora 41: 1.0.7](https://packages.fedoraproject.org/pkgs/python-msgpack/python3-msgpack/)
+    - [Debian](https://packages.debian.org/bookworm/python3-msgpack), [Ubuntu](https://packages.ubuntu.com/oracular/python3-msgpack), [Fedora 41](https://packages.fedoraproject.org/pkgs/python-msgpack/python3-msgpack/): many architectures
     - [ArchLinux](https://archlinux.org/packages/extra/x86_64/python-msgpack/): **only x86_64**
 
   - [u-msgpack-python](https://github.com/vsergeev/u-msgpack-python)
@@ -79,7 +77,7 @@
     - [ArchLinux](https://archlinux.org/packages/extra/any/python-u-msgpack/): **platform-independant**
     - [Debian stable](https://packages.debian.org/bookworm/python3-u-msgpack)
 
-  - Both modules have `packb` and `unpackb` funcs. Their API for extended types seem to be different. But we already convert everything to/from basic types (bool, int, float, string, list, dict) for saving/loading json. So it's probably fine to support both modules.
+  - Both modules have `packb` and `unpackb` funcs. Their API for extended types seem to be different. But we already convert everything to/from basic types (bool, int, float, str, list, dict) for saving/loading json. So it's probably fine to support both modules.
 
 - Rename Jalali calendar to Persian calendar
 
