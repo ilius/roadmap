@@ -59,14 +59,14 @@
 
 - Migrate from `bson` to `msgpack` for event object files
 
-  - [msgpack-python](https://github.com/msgpack/msgpack-python)
+  - [msgpack-python](https://github.com/msgpack/msgpack-python): **platform-dependent**
 
     - [Debian](https://packages.debian.org/bookworm/python3-msgpack), [Ubuntu](https://packages.ubuntu.com/oracular/python3-msgpack), [Fedora](https://packages.fedoraproject.org/pkgs/python-msgpack/python3-msgpack/): many architectures
     - [ArchLinux](https://archlinux.org/packages/extra/x86_64/python-msgpack/): **only x86_64**
 
-  - [u-msgpack-python](https://github.com/vsergeev/u-msgpack-python)
+  - [u-msgpack-python](https://github.com/vsergeev/u-msgpack-python): **pure Python, platform-independent**
 
-    - [ArchLinux](https://archlinux.org/packages/extra/any/python-u-msgpack/): **platform-independant**
+    - [ArchLinux](https://archlinux.org/packages/extra/any/python-u-msgpack/)
     - [Debian stable](https://packages.debian.org/bookworm/python3-u-msgpack)
 
   - Both modules have `packb` and `unpackb` funcs. Their API for extended types seem to be different. But we already convert everything to/from basic types (bool, int, float, str, list, dict) for saving/loading json. So it's probably fine to support both modules.
