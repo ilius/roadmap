@@ -83,6 +83,8 @@
 
 - Script to migrate from `~/.starcal3` to `~/.starcal4`
 
+- Rename `pixmaps` directory to `images`
+
 ## AyanDict v3.0 (2025 or 2026)
 
 - Migrate to [miqt](https://github.com/mappu/miqt) and Qt6 (ready)
