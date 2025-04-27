@@ -71,6 +71,8 @@
 
   - Both modules have `packb` and `unpackb` funcs. Their API for extended types seem to be different. But we already convert everything to/from basic types (bool, int, float, str, list, dict) for saving/loading json. So it's probably fine to support both modules.
 
+- Migrate from `sha1` to `sha256` for event object hashes
+
 - Rename Jalali calendar to Persian calendar
 
 - Organize/move config parameters into namespaces / classes
@@ -82,6 +84,8 @@
     - Save/load as dict (currently it's list)
 
 - Script to migrate from `~/.starcal3` to `~/.starcal4`
+
+  - Export all event groups, accounts and trash to JSON file, then import them to starcal4
 
 - Rename `pixmaps` directory to `images`
 
