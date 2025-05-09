@@ -51,7 +51,9 @@
 
   - Package `tomlkit`: Style-preserving, can parse and dump/encode
 
-    - [PyPI](https://pypi.org/project/tomlkit), [Github](https://github.com/python-poetry/tomlkit)
+    - Size (kB): whl=38, deb:trixie=41, ub:oracular=36, arch=102, fedora=112
+    - [PyPI](https://pypi.org/project/tomlkit)
+    - [Github](https://github.com/python-poetry/tomlkit)
     - [Debian](https://packages.debian.org/bookworm/python3-tomlkit)
     - [Ubuntu](https://packages.ubuntu.com/oracular/python3-tomlkit)
     - [Fedora](https://packages.fedoraproject.org/pkgs/python-tomlkit/python3-tomlkit/)
@@ -59,15 +61,28 @@
 
 - Migrate from `bson` to `msgpack` for event object files
 
-  - [msgpack-python](https://github.com/msgpack/msgpack-python): **platform-dependent**
+  - Package `u-msgpack-python`: **pure Python, platform-independent**
 
-    - [Debian](https://packages.debian.org/bookworm/python3-msgpack), [Ubuntu](https://packages.ubuntu.com/oracular/python3-msgpack), [Fedora](https://packages.fedoraproject.org/pkgs/python-msgpack/python3-msgpack/): many architectures
-    - [ArchLinux](https://archlinux.org/packages/extra/x86_64/python-msgpack/): **only x86_64**
-
-  - [u-msgpack-python](https://github.com/vsergeev/u-msgpack-python): **pure Python, platform-independent**
-
-    - [ArchLinux](https://archlinux.org/packages/extra/any/python-u-msgpack/)
+    - Size (kB): whl=18, deb:trixie=10, ub:oracular=8.3, arch=22
+    - LOC (main folder, no empty lines): 1037 (in one file)
+    - [Github](https://github.com/vsergeev/u-msgpack-python)
+    - [PyPI](https://pypi.org/project/u-msgpack-python/)
     - [Debian stable](https://packages.debian.org/bookworm/python3-u-msgpack)
+    - [Ubuntu](https://packages.ubuntu.com/oracular/python3-u-msgpack)
+    - [ArchLinux](https://archlinux.org/packages/extra/any/python-u-msgpack/)
+
+  - Package `msgpack-python`: **platform-dependent**
+
+    - Size (kB, amd64): whl=400, deb:trixie=82, ub:oracular=78, arch=95, fedora=107
+    - LOC (main folder, no empty lines): 1020 Python + 1620 C (.h)
+    - Many architectures in repos of Debian, Ubuntu, Fedora
+    - ArchLinux: **only x86_64**
+    - [PyPI](https://pypi.org/project/msgpack/)
+    - [Github](https://github.com/msgpack/msgpack-python)
+    - [Debian](https://packages.debian.org/bookworm/python3-msgpack)
+    - [Ubuntu](https://packages.ubuntu.com/oracular/python3-msgpack)
+    - [Fedora](https://packages.fedoraproject.org/pkgs/python-msgpack/python3-msgpack/)
+    - [ArchLinux](https://archlinux.org/packages/extra/x86_64/python-msgpack/)
 
   - Both modules have `packb` and `unpackb` funcs. Their API for extended types seem to be different. But we already convert everything to/from basic types (bool, int, float, str, list, dict) for saving/loading json. So it's probably fine to support both modules.
 
