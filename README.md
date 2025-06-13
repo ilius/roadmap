@@ -4,9 +4,9 @@
 
 - Drop all deprecated API:
 
-  - Remove `glossary.py`
+  - Remove `glossary.py` and `tests/deprecated/`
     - `pyglossary.Glossary` will become `glossary_v2.Glossary`
-  - `info=` argument to `Glossary()`
+  - Add `info: dict[str, Any] | None = None` argument to `Glossary()`
   - Support for `format` variable in plugins:
     - Users must rename it to `name`
   - `Glossary`: `format` arguments to `read`, `directRead` and `write` methods are deprecated
@@ -38,12 +38,29 @@
 
 - AppleDict writer: rename option `indexes` to `index_lang`
 
-- Add `glossary_v3.py`: break `Glossary` class functionality up into several classes, for example
+- `GlossaryInfo`: add `__getattr__` and `__setattr__` methods
 
-  - `GlossaryConvertor`
-  - `GlossaryCreator`
-  - `MemoryLoadedGlossary`
-  - `SQLiteLoadedGlossary`
+- Add `glossary_v3.py`, turn `glossary_v2.py` into a wrapper around it
+
+  - Do not inherit from `GlossaryInfo`, add `self.info = GlossaryInfo()`
+
+    - `glos.setInfo(key, value)` -> `glos.info[key] = value`
+    - `glos.getInfo(key)` -> `glos.info[key]`
+    - `glos.getExtraInfos(excludeKeys)` -> `glos.info - excludeKeys`
+    - `glos.author` -> `glos.info.author`
+    - `glos.sourceLang` -> `glos.info.sourceLang`
+    - `glos.targetLang` -> `glos.info.targetLang`
+    - `glos.sourceLangName` -> `glos.info.sourceLangName`
+    - `glos.targetLangName` -> `glos.info.targetLangName`
+    - `glos.titleTag` -> `glos.info.titleTag`
+    - `glos.detectLangsFromName` -> `glos.info.detectLangsFromName`
+
+  - Break `Glossary` class functionality up into several classes, for example
+
+    - `GlossaryConvertor`
+    - `GlossaryCreator`
+    - `MemoryLoadedGlossary`
+    - `SQLiteLoadedGlossary`
 
 ## StarCalendar 4.0 (2025 or 2026)
 
